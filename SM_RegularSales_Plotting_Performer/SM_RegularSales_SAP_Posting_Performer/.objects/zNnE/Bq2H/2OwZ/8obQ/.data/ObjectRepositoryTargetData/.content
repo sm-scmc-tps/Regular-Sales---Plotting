@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="WDXmChEP3kSptjgSucmj5w" Reference="OUyeWR2sw0Cb1MQhUwxXCg/8obQ7z_0LUWdWMBIiQTtow" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="9540cdeb-86ff-44b8-a9f6-27797deeb679" CvElementArea="108, 175, 74, 22" CvTextArea="133, 179, 20, 12" CvTextArgument="End" CvType="Button" DesignTimeRectangle="107, 174, 75, 23" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='4800' title='&amp;amp;End' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='4800' title='&amp;amp;End' check:text='&amp;amp;End' /&gt;" Guid="9b3582d1-6d49-4b0b-bb34-25d1ce03e022" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='#32770' title='Microsoft Visual Basic' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="9540cdeb-86ff-44b8-a9f6-27797deeb679" CvElementArea="197, 174, 75, 22" CvTextArea="216, 180, 33, 13" CvTextArgument="Debug" CvType="Button" DesignTimeRectangle="196, 174, 75, 23" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='4801' title='&amp;amp;Debug' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='4801' title='&amp;amp;Debug' check:text='&amp;amp;Debug' /&gt;" Guid="947af7c7-8194-44d1-9e0e-ce2aa44d0ef7" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="3896ce7ae0a00a6501d13b0dd8e37af3.png" xmlns="">0Icz6svNeWEqqoNd8DaJgPw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

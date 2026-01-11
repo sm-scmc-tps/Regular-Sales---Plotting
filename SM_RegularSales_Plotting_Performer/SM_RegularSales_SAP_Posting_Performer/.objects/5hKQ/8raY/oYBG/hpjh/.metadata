@@ -1,0 +1,14 @@
+﻿{
+  "Name": "CTextField Local file f…",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "hpjhuY7HnEK_k6nk0Pj8xg",
+  "Reference": "OUyeWR2sw0Cb1MQhUwxXCg/hpjhuY7HnEK_k6nk0Pj8xg",
+  "ParentRef": "OUyeWR2sw0Cb1MQhUwxXCg/oYBGjIYJEUu8G62g6sVZrw",
+  "Created": "2025-04-07T03:51:20.5571116Z",
+  "Updated": "2025-04-07T03:51:20.5571116Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

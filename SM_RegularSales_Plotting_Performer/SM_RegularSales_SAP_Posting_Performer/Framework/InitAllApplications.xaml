@@ -1,0 +1,238 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mg="clr-namespace:Microsoft.Graph;assembly=Microsoft.Graph" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usa="clr-namespace:UiPathTeam.Subtitle.Activities;assembly=SubtitleActivity" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_queueItems" Type="OutArgument(scg:IEnumerable(ui:QueueItem))" />
+    <x:Property Name="out_queueItemCount" Type="OutArgument(x:Int32)" />
+    <x:Property Name="out_queueItemCounter" Type="OutArgument(x:Int32)" />
+    <x:Property Name="out_dt_RegularSales_CompleteReport" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_dt_RegularSales_FailedReportReRun" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_dt_RegularSales_FailedReportManual" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_dt_RegularSales_NoFileReRun" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_dt_RegularSales_MoreThan1FileReRun" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_dt_RegularSales_InvalidFileExtensionReRun" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_dt_RegularSales_CompleteReRun" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_dt_RegularSales_NoFileManual" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>396,292</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPathTeam.Subtitle.Activities</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Models</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>Microsoft.Graph</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Sharepoint.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Sharepoint.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Sharepoint.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Sharepoint.Models.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Sharepoint.Contracts.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Filters</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>System.Globalization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>SubtitleActivity</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="937,1854" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="DestinationFolder" />
+      <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="DestinationFolderForPosting" />
+      <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="DestinationFolderPosted" />
+      <Variable x:TypeArguments="umfm:O365DriveRemoteItem[]" Name="fileList" />
+      <Variable x:TypeArguments="s:DateTime" Name="in_QueueTransactionDate" />
+      <Variable x:TypeArguments="x:Int32" Name="FileListCount" />
+      <Variable x:TypeArguments="mg:DriveItem" Name="FileDriveItem" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Opening applications....&quot;]" />
+    <usa:DisplaySubtitleActivity ContinueOnError="{x:Null}" BackgroundColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#000000&quot;)]" BackgroundOpacity="0.8" DisplayName="Subtitle" DurationMS="3000" FontSize="30" sap:VirtualizedContainerService.HintSize="416,112" sap2010:WorkflowViewState.IdRef="DisplaySubtitleActivity_1" Message="Opening applications...." TextColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#00b7eb&quot;)]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RegularSales_AppsKillingProcess" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="Common\RegularSales_AppsKillingProcess.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_RegularSales_ProcessToBeKilled">[in_Config("RegularSales_ProcessToBeKilled").ToString]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RegularSales_LocalDeleteFilesProcess" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="Common\RegularSales_LocalDeleteFilesProcess.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_RegularSales_LocalFilePathsForDeletion">[in_Config("RegularSales_LocalFilePathsForDeletion").ToString]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RegularSales_InitializeDataTables" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Common\RegularSales_InitializeDataTables.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_RegularSales_CompleteReport">[out_dt_RegularSales_CompleteReport]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_RegularSales_FailedReportReRun">[out_dt_RegularSales_FailedReportReRun]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_RegularSales_FailedReportManual">[out_dt_RegularSales_FailedReportManual]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_RegularSales_NoFileReRun">[out_dt_RegularSales_NoFileReRun]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_RegularSales_MoreThan1FileReRun">[out_dt_RegularSales_MoreThan1FileReRun]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_RegularSales_InvalidFileExtensionReRun">[out_dt_RegularSales_InvalidFileExtensionReRun]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_RegularSales_CompleteReRun">[out_dt_RegularSales_CompleteReRun]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_RegularSales_NoFileManual">[out_dt_RegularSales_NoFileManual]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RegularSales_GetQueueCount" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Common\RegularSales_GetQueueCount.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="scg:IEnumerable(ui:QueueItem)" x:Key="out_queueItems">[out_queueItems]</OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_queueItemCount">[out_queueItemCount]</OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_queueItemCounter">[out_queueItemCounter]</OutArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_RetryConnection" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_44" UnSafe="False" WorkflowFileName="SAP\SAP_RetryConnection.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_SAPConnectionRetry">[CInt(in_Config("RegularSales_SAPConnectionRetry"))]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_CheckAppStateGenSec">[CInt(in_Config("RegularSales_CheckAppStateGenSec"))]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SAPConnectionName">[in_Config("RegularSales_SAP_ConnectionName").ToString.Trim]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_LogonPath">[in_Config("RegularSales_SAP_LogonPath").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Credential">[in_Config("RegularSales_SAP_Credential").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_Retries">[CInt(in_Config("RegularSales_SAP_Retries").ToString)]</InArgument>
+        <InArgument x:TypeArguments="x:Double" x:Key="in_RetryInterval">[CDbl(in_Config("RegularSales_SAP_RetryInterval").ToString)]</InArgument>
+        <InArgument x:TypeArguments="x:Double" x:Key="in_Timeout">[CDbl(in_Config("RegularSales_SAP_Timeout").ToString)]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_Login" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_42" UnSafe="False" WorkflowFileName="SAP\SAP_Login.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_LogonPath">[in_Config("RegularSales_SAP_LogonPath").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_ConnectionName">[in_Config("RegularSales_SAP_ConnectionName").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Client">[in_Config("RegularSales_SAP_Client").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Credential">[in_Config("RegularSales_SAP_Credential").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Language">[in_Config("RegularSales_SAP_Language").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:Double" x:Key="in_Timeout">[CDbl(in_Config("RegularSales_SAP_Timeout").ToString)]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_Retries">[CInt(in_Config("RegularSales_SAP_Retries").ToString)]</InArgument>
+        <InArgument x:TypeArguments="x:Double" x:Key="in_RetryInterval">[CDbl(in_Config("RegularSales_SAP_RetryInterval").ToString)]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sharepoint_DownloadFile - Invoke Workflow File (Sharepoint\Sharepoint_DownloadFile.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="Sharepoint\Sharepoint_DownloadFile.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SharepointURL">[in_Config("RegularSales_Sharepoint_FOR_BOT_OPS_URL").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_DownloadLocalPath">[in_Config("RegularSales_Email_LocalFolder").ToString]</InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:LogMessage DisplayName="Log message " sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;End of InitAllApplication Process&quot;]" />
+    <usa:DisplaySubtitleActivity ContinueOnError="{x:Null}" BackgroundColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#000000&quot;)]" BackgroundOpacity="0.8" DisplayName="Subtitle" DurationMS="3000" FontSize="30" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="DisplaySubtitleActivity_6" Message="End of InitAllApplication Process" TextColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#00b7eb&quot;)]" />
+  </Sequence>
+</Activity>

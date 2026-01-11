@@ -1,0 +1,279 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Vista_Cinema_SAP_Posting_AddDataTableDetails" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:usa="clr-namespace:UiPathTeam.Subtitle.Activities;assembly=SubtitleActivity" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_EventStatus" Type="InArgument(x:String)" />
+    <x:Property Name="in_RetryProcessingCount" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_branchCode" Type="InArgument(x:String)" />
+    <x:Property Name="in_PostingStatus" Type="InArgument(x:String)" />
+    <x:Property Name="in_QueueTransactionDateParse" Type="InArgument(x:String)" />
+    <x:Property Name="in_Remarks" Type="InArgument(x:String)" />
+    <x:Property Name="in_DestinationFolderPosted" Type="InArgument(umfm:O365DriveRemoteItem)" />
+    <x:Property Name="io_dt_RegularSales_CompleteReport" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_dt_RegularSales_FailedReportReRun" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_dt_RegularSales_FailedReportManual" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_dt_RegularSales_NoFileReRun" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_dt_RegularSales_MoreThan1FileReRun" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_dt_RegularSales_InvalidFileExtensionReRun" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_dt_RegularSales_CompleteReRun" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="io_dt_RegularSales_NoFileManual" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="in_companyCode" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Vista_Cinema_SAP_Posting_AddDataTableDetails_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPathTeam.Subtitle.Activities</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>SubtitleActivity</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Vista_Cinema_SAP_Posting_AddDataTableDetails" sap:VirtualizedContainerService.HintSize="939,4932" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="DestinationFolderPostedURL" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <If Condition="[in_EventStatus = &quot;file not exist&quot;]" sap:VirtualizedContainerService.HintSize="614,4745" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="612,554" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="578,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) + &quot; [RegularSales_SAP_Posting_AddDataTableDetails] - Event Status: &quot; + in_EventStatus + &quot; - corresponding details will be inserted to io_dt_RegularSales_NoFileReRun&quot;]" />
+          <usa:DisplaySubtitleActivity ContinueOnError="{x:Null}" BackgroundColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#000000&quot;)]" BackgroundOpacity="0.8" DisplayName="Event Status and Data Table display" DurationMS="3000" FontSize="30" sap:VirtualizedContainerService.HintSize="578,112" sap2010:WorkflowViewState.IdRef="DisplaySubtitleActivity_1" Message="[&quot;Event Status: &quot; + in_EventStatus + &quot; - corresponding details will be inserted to io_dt_RegularSales_NoFileReRun&quot;]" TextColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#00b7eb&quot;)]" />
+          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_branchCode, in_companyCode, in_RetryProcessingCount.ToString, in_PostingStatus, in_Remarks, in_QueueTransactionDateParse}]" DataTable="[io_dt_RegularSales_NoFileReRun]" DisplayName="Add Data No File Re Run" sap:VirtualizedContainerService.HintSize="578,209" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="612,4053" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If Condition="[in_EventStatus = &quot;file is more than 1&quot;]" sap:VirtualizedContainerService.HintSize="578,3993" sap2010:WorkflowViewState.IdRef="If_2">
+            <If.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="576,554" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="542,173" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) + &quot; [RegularSales_SAP_Posting_AddDataTableDetails] - Event Status: &quot; + in_EventStatus + &quot; - corresponding details will be inserted to io_dt_RegularSales_MoreThan1FileReRun&quot;]" />
+                <usa:DisplaySubtitleActivity ContinueOnError="{x:Null}" BackgroundColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#000000&quot;)]" BackgroundOpacity="0.8" DisplayName="Event Status and Data Table display" DurationMS="3000" FontSize="30" sap:VirtualizedContainerService.HintSize="542,112" sap2010:WorkflowViewState.IdRef="DisplaySubtitleActivity_2" Message="[&quot;Event Status: &quot; + in_EventStatus + &quot; - corresponding details will be inserted to io_dt_RegularSales_MoreThan1FileReRun&quot;]" TextColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#00b7eb&quot;)]" />
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_branchCode, in_companyCode, in_RetryProcessingCount.ToString, in_PostingStatus, in_Remarks, in_QueueTransactionDateParse}]" DataTable="[io_dt_RegularSales_MoreThan1FileReRun]" DisplayName="Add Data File is more than 1" sap:VirtualizedContainerService.HintSize="542,209" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="576,3310" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If Condition="[in_EventStatus = &quot;file is not in csv&quot;]" sap:VirtualizedContainerService.HintSize="542,3250" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="540,554" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="506,173" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) + &quot; [RegularSales_SAP_Posting_AddDataTableDetails] - Event Status: &quot; + in_EventStatus + &quot; - corresponding details will be inserted to io_dt_RegularSales_InvalidFileExtensionReRun&quot;]" />
+                      <usa:DisplaySubtitleActivity ContinueOnError="{x:Null}" BackgroundColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#000000&quot;)]" BackgroundOpacity="0.8" DisplayName="Event Status and Data Table display" DurationMS="3000" FontSize="30" sap:VirtualizedContainerService.HintSize="506,112" sap2010:WorkflowViewState.IdRef="DisplaySubtitleActivity_3" Message="[&quot;Event Status: &quot; + in_EventStatus + &quot; - corresponding details will be inserted to io_dt_RegularSales_InvalidFileExtensionReRun&quot;]" TextColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#00b7eb&quot;)]" />
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_branchCode, in_companyCode, in_RetryProcessingCount.ToString, in_PostingStatus, in_Remarks, in_QueueTransactionDateParse}]" DataTable="[io_dt_RegularSales_InvalidFileExtensionReRun]" DisplayName="Add Data Invalid File Extension" sap:VirtualizedContainerService.HintSize="506,209" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="540,2567" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If Condition="[in_EventStatus = &quot;sap expected ui not appears&quot; OR in_EventStatus = &quot;file download failed&quot; OR  in_EventStatus = &quot;posting failed&quot; OR  in_EventStatus = &quot;sap is unreachable&quot;]" sap:VirtualizedContainerService.HintSize="506,2507" sap2010:WorkflowViewState.IdRef="If_4">
+                        <If.Then>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="504,554" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="470,173" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) + &quot; [RegularSales_SAP_Posting_AddDataTableDetails] - Event Status: &quot; + in_EventStatus + &quot; - corresponding details will be inserted to io_dt_RegularSales_FailedReportReRun&quot;]" />
+                            <usa:DisplaySubtitleActivity ContinueOnError="{x:Null}" BackgroundColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#000000&quot;)]" BackgroundOpacity="0.8" DisplayName="Event Status and Data Table display" DurationMS="3000" FontSize="30" sap:VirtualizedContainerService.HintSize="470,112" sap2010:WorkflowViewState.IdRef="DisplaySubtitleActivity_4" Message="[&quot;Event Status: &quot; + in_EventStatus + &quot; - corresponding details will be inserted to io_dt_RegularSales_FailedReportReRun&quot;]" TextColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#00b7eb&quot;)]" />
+                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_branchCode, in_companyCode, in_RetryProcessingCount.ToString, in_PostingStatus, in_Remarks, in_QueueTransactionDateParse}]" DataTable="[io_dt_RegularSales_FailedReportReRun]" DisplayName="Add Data SAP ui not appears OR failed download" sap:VirtualizedContainerService.HintSize="470,209" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="504,1824" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[in_EventStatus = &quot;posting successful&quot;]" sap:VirtualizedContainerService.HintSize="470,1764" sap2010:WorkflowViewState.IdRef="If_5">
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,1411" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[DestinationFolderPostedURL]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">["&lt;a href='" &amp; in_DestinationFolderPosted.Url.ToString &amp; "'&gt;Settled Folder Link&lt;/a&gt;"]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <If Condition="[in_RetryProcessingCount = 0]" sap:VirtualizedContainerService.HintSize="434,1237" sap2010:WorkflowViewState.IdRef="If_6">
+                                    <If.Then>
+                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,554" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) + &quot; [RegularSales_SAP_Posting_AddDataTableDetails] - Event Status: &quot; + in_EventStatus + &quot; and Reprocessing Count: &quot; + in_RetryProcessingCount.ToString + &quot; - corresponding details will be inserted to io_dt_RegularSales_CompleteReport&quot;]" />
+                                        <usa:DisplaySubtitleActivity ContinueOnError="{x:Null}" BackgroundColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#000000&quot;)]" BackgroundOpacity="0.8" DisplayName="Event Status and Data Table display" DurationMS="3000" FontSize="30" sap:VirtualizedContainerService.HintSize="382,112" sap2010:WorkflowViewState.IdRef="DisplaySubtitleActivity_5" Message="[&quot;Event Status: &quot; + in_EventStatus + &quot; and Reprocessing Count: &quot; + in_RetryProcessingCount.ToString + &quot; - corresponding details will be inserted to io_dt_RegularSales_CompleteReport&quot;]" TextColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#00b7eb&quot;)]" />
+                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_branchCode, in_companyCode, in_RetryProcessingCount.ToString, in_PostingStatus, in_Remarks, in_QueueTransactionDateParse,DestinationFolderPostedURL}]" DataTable="[io_dt_RegularSales_CompleteReport]" DisplayName="Add Data Complete Report" sap:VirtualizedContainerService.HintSize="382,209" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+                                      </Sequence>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,554" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) + &quot; [RegularSales_SAP_Posting_AddDataTableDetails] - Event Status: &quot; + in_EventStatus + &quot; and Reprocessing Count: &quot; + in_RetryProcessingCount.ToString + &quot; - corresponding details will be inserted to io_dt_RegularSales_CompleteReRun&quot;]" />
+                                        <usa:DisplaySubtitleActivity ContinueOnError="{x:Null}" BackgroundColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#000000&quot;)]" BackgroundOpacity="0.8" DisplayName="Event Status and Data Table display" DurationMS="3000" FontSize="30" sap:VirtualizedContainerService.HintSize="382,112" sap2010:WorkflowViewState.IdRef="DisplaySubtitleActivity_6" Message="[&quot;Event Status: &quot; + in_EventStatus + &quot;and Reprocessing Count: &quot; + in_RetryProcessingCount.ToString + &quot; - corresponding details will be inserted to io_dt_RegularSales_CompleteReRun&quot;]" TextColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#00b7eb&quot;)]" />
+                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{in_branchCode, in_companyCode, in_RetryProcessingCount.ToString, in_PostingStatus, in_Remarks, in_QueueTransactionDateParse,DestinationFolderPostedURL}]" DataTable="[io_dt_RegularSales_CompleteReRun]" DisplayName="Add Data Complete Re Run" sap:VirtualizedContainerService.HintSize="382,209" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
+                                      </Sequence>
+                                    </If.Else>
+                                  </If>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,224" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Event Log Display" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) + &quot; [RegularSales_SAP_Posting_AddDataTableDetails] - Event is: &quot; + in_EventStatus + &quot;and Undefined&quot;]" />
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Event Log Display" sap:VirtualizedContainerService.HintSize="614,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) + &quot; [RegularSales_SAP_Posting_AddDataTableDetails] - Event is: &quot; + in_EventStatus]" />
+  </Sequence>
+</Activity>

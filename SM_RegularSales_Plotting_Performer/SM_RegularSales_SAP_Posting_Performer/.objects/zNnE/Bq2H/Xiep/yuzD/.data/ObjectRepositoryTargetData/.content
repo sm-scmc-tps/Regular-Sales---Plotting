@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="sr8ovy0UrUmRmMK4arsyfA" Reference="OUyeWR2sw0Cb1MQhUwxXCg/yuzDk7BWOEqqoQn9q5XfLg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="61439d04-eb84-43cd-b952-0c0177acf77e" CvElementArea="650, 429, 22, 24" CvType="ArrowButton" DesignTimeRectangle="608, 397, 65, 56" DesignTimeScaleFactor="1.25" ElementType="Cell" FullSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' omit:title='*&amp;quot; + in_branchCode + &amp;quot;_SALES CHECKING - &amp;quot; + in_monthYear + &amp;quot;.xlsb - Excel' /&gt;&lt;uia automationid='Grid' name='Top Left Pane' role='data grid' /&gt;&lt;uia automationid='G5' name='&amp;quot;G&amp;quot; 5' role='item' tableCol='7' tableRow='5' /&gt;" FuzzySelectorArgument="&lt;uia automationid='Grid' name='Top Left Pane' role='data grid' /&gt;&lt;uia automationid='G5' name='&amp;quot;G&amp;quot; 5' role='item' /&gt;" Guid="af9ea111-fecc-4f38-ab17-535d08033316" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='SMCY_SALES CHECKING - SEPTEMBER 2025.xlsb - Excel' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="0d007bd8e32c394e6cc8ae6a56061950.png" xmlns="">0dowGkTtuPkO6p8O9i7950g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

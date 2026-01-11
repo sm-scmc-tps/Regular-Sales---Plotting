@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="UyTKv_unx0OyNm-zTp3Y9w" Reference="OUyeWR2sw0Cb1MQhUwxXCg/TXk-0Y6cEUSAz84wxxXEAg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="d3dca1f9-3d61-406f-8737-ecf68f26ad88" CvElementArea="15, 121, 341, 20" CvType="InputBox" DesignTimeRectangle="17, 122, 339, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd ctrlid='4900' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='4900' /&gt;" Guid="e00af614-be49-4e6e-9ee3-83c9f6fc8105" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='#32770' title='Update Value' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="d3dca1f9-3d61-406f-8737-ecf68f26ad88" CvElementArea="296, 68, 59, 23" CvTextArea="307, 73, 35, 12" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="296, 68, 60, 23" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='2' title='Cancel' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='2' title='Cancel' check:text='Cancel' /&gt;" Guid="3e18fc56-f8df-40f9-a251-cbc1973c036c" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="af0efc54874f2c7c167be64e0b36244f.png" xmlns="">0BCUcEFabc0mhF_itI-POjA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

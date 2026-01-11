@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Click Open",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "PuiRs49eCk-ro6RJf4KMYA",
+  "Reference": "OUyeWR2sw0Cb1MQhUwxXCg/PuiRs49eCk-ro6RJf4KMYA",
+  "ParentRef": "OUyeWR2sw0Cb1MQhUwxXCg/pGx3tcfM5UG0hDRKAn9KeQ",
+  "Created": "2025-04-03T02:18:45.6898203Z",
+  "Updated": "2025-04-03T02:18:45.6898203Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
