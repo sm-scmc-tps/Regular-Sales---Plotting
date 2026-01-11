@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="VAqD8NrwqkuZDr-0ipxV-Q" Reference="OUyeWR2sw0Cb1MQhUwxXCg/pmLznWPwrUmpFYXT6vuz1Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="56450454-4bb7-46e2-b10f-7311c1d1b280" CvTextArea="1701, 130, 27, 12" CvTextArgument="Filter" CvType="Text" DesignTimeRectangle="1701, 130, 27, 12" DesignTimeScaleFactor="1" ElementType="Text" Guid="db7f0442-b39a-4bb9-b2ca-8450c22cb008" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='Maya and Gcash MacroTemplate CN&amp;amp;OtherBUs - Excel' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Visible" WaitForReadyArgument="Complete">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="56450454-4bb7-46e2-b10f-7311c1d1b280" CvTextArea="1675, 150, 38, 12" CvTextArgument="Editing" CvType="Text" DesignTimeRectangle="1675, 150, 38, 12" ElementType="Text" Guid="7b488aad-b1c1-432f-9157-83e77ff0ee31" SearchSteps="CV" TargetType="ComputerVisionBased" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="eb92b50e96603fed8a796f70ba8f61d7.png" xmlns="">0C-kRr418l0emYGey8DnkZw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

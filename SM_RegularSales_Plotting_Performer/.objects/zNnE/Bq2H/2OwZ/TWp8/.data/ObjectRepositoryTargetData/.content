@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Le29-biz0U-PWRzgADn1vg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="92910874-0ddd-4d52-99eb-efb8cb998a26" CvElementArea="108, 175, 74, 22" CvTextArea="133, 179, 20, 12" CvTextArgument="End" CvType="Button" DesignTimeRectangle="107, 174, 75, 23" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='*' title='&amp;amp;End' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='*' title='&amp;amp;End' check:text='&amp;amp;End' /&gt;" Guid="a266cc76-d5ef-43cf-a54e-f84e3620de43" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='#32770' title='Microsoft Visual Basic' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="92910874-0ddd-4d52-99eb-efb8cb998a26" CvElementArea="197, 174, 75, 22" CvTextArea="216, 180, 33, 13" CvTextArgument="Debug" CvType="Button" DesignTimeRectangle="196, 174, 75, 23" ElementType="Button" FullSelectorArgument="&lt;wnd ctrlid='*' title='&amp;amp;Debug' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='*' title='&amp;amp;Debug' check:text='&amp;amp;Debug' /&gt;" Guid="c887ff60-06b3-47ee-9231-d23828aaa1e9" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="4d37ffcbee2edd287c1c56f4226c2522.png" xmlns="">07KBY9TjyQkaEsrZEQ-veuA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

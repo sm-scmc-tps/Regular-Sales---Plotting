@@ -1,0 +1,13 @@
+﻿{
+  "Name": "S4_Maya and Gcash MacroTemplate CN&OtherBUs -(1)",
+  "Type": "Screen",
+  "Id": "TrcjgvroZEWfuR_AlxICkw",
+  "Reference": "OUyeWR2sw0Cb1MQhUwxXCg/TrcjgvroZEWfuR_AlxICkw",
+  "ParentRef": "OUyeWR2sw0Cb1MQhUwxXCg/Bq2HpqEDeUORLE2snP5kWg",
+  "Created": "2025-04-03T02:44:36.9834988Z",
+  "Updated": "2025-04-03T02:44:36.9834988Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="XGwty5V2xUikUr67M-jGTw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="690, 197, 95, 32" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap colName='VALIDFROM' id='usr/subSUB_AREA_ROOT:SAPLREIS_GUI_CONTROLLER:0200/subSUB_AREA:SAPLREIS_GUI_CONTROLLER:2000/cntlCC_LIST/shellcont/shell' /&gt;" Guid="3f11f6ea-a5e5-49bc-9ab6-cbf65f256b12" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Collective Entry of Sales Reports' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="82c0c21824011d66b372d86d8e43294a.png" xmlns="">0yYt7n-x_iUWT25C2Cn2Msw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

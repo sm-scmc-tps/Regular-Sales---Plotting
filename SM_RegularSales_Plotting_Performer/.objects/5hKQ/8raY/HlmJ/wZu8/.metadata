@@ -1,0 +1,14 @@
+﻿{
+  "Name": "SCMC.7",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "wZu87jMhnUmmkKUbmDZV6w",
+  "Reference": "OUyeWR2sw0Cb1MQhUwxXCg/wZu87jMhnUmmkKUbmDZV6w",
+  "ParentRef": "OUyeWR2sw0Cb1MQhUwxXCg/HlmJV_fa8EOyp3Za0hGzEw",
+  "Created": "2025-10-27T11:55:31.9532737Z",
+  "Updated": "2025-10-27T11:55:31.9532737Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="XWgeqdKgsEekVx2f1n-gaA" Reference="OUyeWR2sw0Cb1MQhUwxXCg/EqmZEnZn3EOZb9esueFRbA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="54, 914, 347, 16" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap id='sbar/pane[0]' text='Not Authorized to Generate on Specified Business Place' /&gt;" Guid="10fb74d3-30c5-4797-b7c8-bcf5839ce7ee" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Accounting Rental Rates Summary' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="a1d9dfcc2b24da20db24e6f72f16e65d.png" xmlns="">0hrhKFrqdH0eyMfQX1QmbYg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

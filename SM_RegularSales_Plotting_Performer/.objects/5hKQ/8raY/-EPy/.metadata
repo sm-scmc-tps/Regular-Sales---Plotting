@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Collective Entry of Sales Reports",
+  "Type": "Screen",
+  "Id": "-EPyWC5LgUyw3mLtf9L5kA",
+  "Reference": "OUyeWR2sw0Cb1MQhUwxXCg/-EPyWC5LgUyw3mLtf9L5kA",
+  "ParentRef": "OUyeWR2sw0Cb1MQhUwxXCg/8raYqcWOwkyymhaiXzKW6g",
+  "Created": "2025-10-27T04:11:02.2717741Z",
+  "Updated": "2025-10-27T04:11:02.2717741Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

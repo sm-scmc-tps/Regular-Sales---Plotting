@@ -1,0 +1,460 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="RegularSales_SAP_RESRRP_Download" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_BranchCode" Type="InArgument(x:String)" />
+    <x:Property Name="out_QueueTransactionDateParse" Type="InArgument(x:String)" />
+    <x:Property Name="in_FileName" Type="InArgument(x:String)" />
+    <x:Property Name="in_reportFromDate" Type="InArgument(x:String)" />
+    <x:Property Name="in_reportToDate" Type="InArgument(x:String)" />
+    <x:Property Name="in_MonthEnd" Type="InArgument(s:DateTime)" />
+  </x:Members>
+  <this:RegularSales_SAP_RESRRP_Download.in_FileName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:RegularSales_SAP_RESRRP_Download.in_FileName>
+  <this:RegularSales_SAP_RESRRP_Download.in_reportFromDate>
+    <InArgument x:TypeArguments="x:String" />
+  </this:RegularSales_SAP_RESRRP_Download.in_reportFromDate>
+  <this:RegularSales_SAP_RESRRP_Download.in_reportToDate>
+    <InArgument x:TypeArguments="x:String" />
+  </this:RegularSales_SAP_RESRRP_Download.in_reportToDate>
+  <this:RegularSales_SAP_RESRRP_Download.in_MonthEnd>
+    <InArgument x:TypeArguments="s:DateTime" />
+  </this:RegularSales_SAP_RESRRP_Download.in_MonthEnd>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>RegularSales_SAP_RESRRP_Download_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="RegularSales_SAP_RESRRP_Download" sap:VirtualizedContainerService.HintSize="836,2795" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;RESRRP SAP Downloading Started...&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Collective Entry of Sales Reports(1)(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="554,2435" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e57cf0b7-6bdc-4fd0-8819-f927f0d56e6c" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,2112" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'GridView  SAPGUI.GridVi...'" sap:VirtualizedContainerService.HintSize="486,192" sap2010:WorkflowViewState.IdRef="SelectMenuItem_1" Item="Choose Layout...">
+              <ucas:SelectMenuItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="32">
+                  <x:String>Delete Selected Report</x:String>
+                  <x:String>Details</x:String>
+                  <x:String>Sort in Ascending Order</x:String>
+                  <x:String>Sort in Descending Order</x:String>
+                  <x:String>Find</x:String>
+                  <x:String>Set Filter...</x:String>
+                  <x:String>Set Filter.../Set Filter...</x:String>
+                  <x:String>Set Filter.../Delete Filter</x:String>
+                  <x:String>Total</x:String>
+                  <x:String>Total/Total</x:String>
+                  <x:String>Total/Mean Value</x:String>
+                  <x:String>Total/Minimum</x:String>
+                  <x:String>Total/Maximum</x:String>
+                  <x:String>Print</x:String>
+                  <x:String>Views/List Output</x:String>
+                  <x:String>Views/Grid</x:String>
+                  <x:String>Views/Excel inplace</x:String>
+                  <x:String>Export/Spreadsheet</x:String>
+                  <x:String>Export/Word processing</x:String>
+                  <x:String>Export/Local File</x:String>
+                  <x:String>Export/Send</x:String>
+                  <x:String>Export/SAPoffice Folders</x:String>
+                  <x:String>Export/ABC Analys.</x:String>
+                  <x:String>Export/HTML download</x:String>
+                  <x:String>Choose Layout...</x:String>
+                  <x:String>Choose Layout.../Choose Layout...</x:String>
+                  <x:String>Choose Layout.../Change Layout...</x:String>
+                  <x:String>Choose Layout.../Save Layout...</x:String>
+                  <x:String>Choose Layout.../Manage Layouts</x:String>
+                  <x:String>End User Documentation</x:String>
+                </scg:List>
+              </ucas:SelectMenuItem.Items>
+              <ucas:SelectMenuItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bac99995-2313-4a6a-9ab7-8b86bfd18a92" InformativeScreenshot="ccf5ac661ffd7b67a0abeca3654c31a4" Selector="&lt;sap id='usr/subSUB_AREA_ROOT:SAPLREIS_GUI_CONTROLLER:0200/subSUB_AREA:SAPLREIS_GUI_CONTROLLER:2000/cntlCC_LIST/shellcont/shell' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ucas:SelectMenuItem.Target>
+            </ucas:SelectMenuItem>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'FSS2'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,225" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e57cf0b7-6bdc-4fd0-8819-f927f0d56e6c" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="22, 201, 117, 26" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap colName='VARIANT' id='usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell' tableRow='1' /&gt;" Guid="5e907bf3-9898-408d-b8a4-60ea9e0e5d47" InformativeScreenshot="380a8e4cf18d773a018e0e10ce10be94.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Choose Layout' idx='*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Report from'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e57cf0b7-6bdc-4fd0-8819-f927f0d56e6c" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="XGwty5V2xUikUr67M-jGTw" DesignTimeRectangle="690, 197, 95, 32" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap colName='VALIDFROM' id='usr/subSUB_AREA_ROOT:SAPLREIS_GUI_CONTROLLER:0200/subSUB_AREA:SAPLREIS_GUI_CONTROLLER:2000/cntlCC_LIST/shellcont/shell' /&gt;" Guid="3f11f6ea-a5e5-49bc-9ab6-cbf65f256b12" InformativeScreenshot="82c0c21824011d66b372d86d8e43294a.png" Reference="OUyeWR2sw0Cb1MQhUwxXCg/5PHgvgSEB02xwXbs2C2Bew" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Collective Entry of Sales Reports' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'GridView  SAPGUI.GridVi...'" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="SelectMenuItem_3" Item="Set Filter...">
+              <ucas:SelectMenuItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="32">
+                  <x:String>Delete Selected Report</x:String>
+                  <x:String>Details</x:String>
+                  <x:String>Sort in Ascending Order</x:String>
+                  <x:String>Sort in Descending Order</x:String>
+                  <x:String>Find</x:String>
+                  <x:String>Set Filter...</x:String>
+                  <x:String>Set Filter.../Set Filter...</x:String>
+                  <x:String>Set Filter.../Delete Filter</x:String>
+                  <x:String>Total</x:String>
+                  <x:String>Total/Total</x:String>
+                  <x:String>Total/Mean Value</x:String>
+                  <x:String>Total/Minimum</x:String>
+                  <x:String>Total/Maximum</x:String>
+                  <x:String>Print</x:String>
+                  <x:String>Views/List Output</x:String>
+                  <x:String>Views/Grid</x:String>
+                  <x:String>Views/Excel inplace</x:String>
+                  <x:String>Export/Spreadsheet</x:String>
+                  <x:String>Export/Word processing</x:String>
+                  <x:String>Export/Local File</x:String>
+                  <x:String>Export/Send</x:String>
+                  <x:String>Export/SAPoffice Folders</x:String>
+                  <x:String>Export/ABC Analys.</x:String>
+                  <x:String>Export/HTML download</x:String>
+                  <x:String>Choose Layout...</x:String>
+                  <x:String>Choose Layout.../Choose Layout...</x:String>
+                  <x:String>Choose Layout.../Change Layout...</x:String>
+                  <x:String>Choose Layout.../Save Layout...</x:String>
+                  <x:String>Choose Layout.../Manage Layouts</x:String>
+                  <x:String>End User Documentation</x:String>
+                </scg:List>
+              </ucas:SelectMenuItem.Items>
+              <ucas:SelectMenuItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bac99995-2313-4a6a-9ab7-8b86bfd18a92" InformativeScreenshot="272b0b9e7626f78dd274632c142b9843" Selector="&lt;sap id='usr/subSUB_AREA_ROOT:SAPLREIS_GUI_CONTROLLER:0200/subSUB_AREA:SAPLREIS_GUI_CONTROLLER:2000/cntlCC_LIST/shellcont/shell' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ucas:SelectMenuItem.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ucas:SelectMenuItem>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Report from'" sap:VirtualizedContainerService.HintSize="486,187" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_reportFromDate]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="586ee6f4-0e78-4c3a-8be2-57b966702b31" InformativeScreenshot="2462f3761380557001249b52d0baf3de" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Determine Values for Filter Criteria' idx='*' /&gt;&lt;sap id='usr/ssub%_SUBSCREEN_FREESEL:SAPLSSEL:1105/ctxt%%DYN001-LOW' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Report from'" sap:VirtualizedContainerService.HintSize="486,187" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[in_reportToDate]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7ee0dbd0-b63a-49e0-b731-0c68adafdc45" InformativeScreenshot="b6e7330a4775a06a78e17bdf6f520b11" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Determine Values for Filter Criteria' idx='*' /&gt;&lt;sap id='usr/ssub%_SUBSCREEN_FREESEL:SAPLSSEL:1105/ctxt%%DYN001-HIGH' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:TypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Execute (Enter)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,225" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e57cf0b7-6bdc-4fd0-8819-f927f0d56e6c" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="rsMHOiD5gk-utWRYJIgfaQ" DesignTimeRectangle="1025, 592, 26, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[0]' /&gt;" Guid="da8a4148-fc0a-4689-8a94-9371fe39ee4c" InformativeScreenshot="a22438a3e9b9dbd105f69d68fe0b0658.png" Reference="OUyeWR2sw0Cb1MQhUwxXCg/545OL4nthUqeVUYH_EZDZA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Determine Values for Filter Criteria' idx='*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'GridView  SAPGUI.GridVi...'" sap:VirtualizedContainerService.HintSize="486,192" sap2010:WorkflowViewState.IdRef="SelectMenuItem_2" Item="Export/Spreadsheet">
+              <ucas:SelectMenuItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="32">
+                  <x:String>Delete Selected Report</x:String>
+                  <x:String>Details</x:String>
+                  <x:String>Sort in Ascending Order</x:String>
+                  <x:String>Sort in Descending Order</x:String>
+                  <x:String>Find</x:String>
+                  <x:String>Set Filter...</x:String>
+                  <x:String>Set Filter.../Set Filter...</x:String>
+                  <x:String>Set Filter.../Delete Filter</x:String>
+                  <x:String>Total</x:String>
+                  <x:String>Total/Total</x:String>
+                  <x:String>Total/Mean Value</x:String>
+                  <x:String>Total/Minimum</x:String>
+                  <x:String>Total/Maximum</x:String>
+                  <x:String>Print</x:String>
+                  <x:String>Views/List Output</x:String>
+                  <x:String>Views/Grid</x:String>
+                  <x:String>Views/Excel inplace</x:String>
+                  <x:String>Export/Spreadsheet</x:String>
+                  <x:String>Export/Word processing</x:String>
+                  <x:String>Export/Local File</x:String>
+                  <x:String>Export/Send</x:String>
+                  <x:String>Export/SAPoffice Folders</x:String>
+                  <x:String>Export/ABC Analys.</x:String>
+                  <x:String>Export/HTML download</x:String>
+                  <x:String>Choose Layout...</x:String>
+                  <x:String>Choose Layout.../Choose Layout...</x:String>
+                  <x:String>Choose Layout.../Change Layout...</x:String>
+                  <x:String>Choose Layout.../Save Layout...</x:String>
+                  <x:String>Choose Layout.../Manage Layouts</x:String>
+                  <x:String>End User Documentation</x:String>
+                </scg:List>
+              </ucas:SelectMenuItem.Items>
+              <ucas:SelectMenuItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bac99995-2313-4a6a-9ab7-8b86bfd18a92" InformativeScreenshot="ccf5ac661ffd7b67a0abeca3654c31a4" Selector="&lt;sap id='usr/subSUB_AREA_ROOT:SAPLREIS_GUI_CONTROLLER:0200/subSUB_AREA:SAPLREIS_GUI_CONTROLLER:2000/cntlCC_LIST/shellcont/shell' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ucas:SelectMenuItem.Target>
+            </ucas:SelectMenuItem>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,387" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,276" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Continue (Enter)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,216" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e57cf0b7-6bdc-4fd0-8819-f927f0d56e6c" Version="V4">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="473, 304, 26, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[0]' /&gt;" Guid="a669e4ce-67cf-4597-9d34-706f7f43798f" InformativeScreenshot="c297c25b22f5c856d3e86cb8f0c72143.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Select Spreadsheet' idx='*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_SaveFile_RESRRP - Invoke Workflow File (SAP\SAP_SaveFile_RESRRP.xaml)" sap:VirtualizedContainerService.HintSize="486,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SAP\SAP_SaveFile_RESRRP.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_Delay">[TimeSpan.FromSeconds(CInt(in_Config("RegularSales_Macro_Delay")))]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_DirectoryPath">[in_Config("RegularSales_SAP_OutputDirectory").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_FileName">[in_FileName]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SAP_LogonPath">[in_Config("RegularSales_SAP_LogonPath").ToString]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <Assign sap:VirtualizedContainerService.HintSize="486,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_QueueTransactionDateParse]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[in_MonthEnd.ToString("dd.MM.yyyy")]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,50" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_SaveFile_REISCN - Invoke Workflow File (SAP\SAP_SaveFile_REISCN.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SAP\SAP_SaveFile_REISCN.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_Delay">[TimeSpan.FromSeconds(CInt(in_Config("RegularSales_Macro_Delay")))]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_DirectoryPath">[in_Config("RegularSales_SAP_OutputDirectory").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_FileName">[in_FileName]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_SAP_LogonPath">[in_Config("RegularSales_SAP_LogonPath").ToString]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1776, 958" ContentHash="W1bal7N_lEaeijrRGcNv-Q" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVFhHYxgFo2AUjIJBAxxrVls61ay5T2dcC7Ue7AAnoMB/emHHmjWz7KtXMkGtp68DgJbPsCtfzQi1GgLo5QCg5dMcy1cgLH//5UcECG89fa+5dsnR/5Ti0nkH/ztWrcJuefWaKXYVq1B9/v7Lz//Uwk/ffP6f3LX2v335cmyWT7KqQPI5DGAziBwMsjy+ddl/m6IFQMtWo1s+wbZ4CablIIDNMFLxk9ef/se1LMVuec2aPrMStGBHBtgMJAWDLI8FWV6M1fIeqDW4AdCQxSB89f7LfWsPXfm/9uBlknBsCzDYsVlevboLagVxwKZovotd6ZL/diWLScL25cuwWL6mA2os8QBoCFXKAWCwt0GNJA1QqSBqhhpHOqDUAUCfN0KNIg8AHaAJNGg+mTgXaswoGAWjYBSQCBgYAMLf0dVJBbU9AAAAAElFTkSuQmCC" InformativeScreenshot="acbb20221cf395f5e08330138c365fc2.png" Reference="OUyeWR2sw0Cb1MQhUwxXCg/zeLlwBdomU2JyC6SpNVkTQ" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Collective Entry of Sales Reports' /&gt;" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;RESRRP SAP Downloading Completed...&quot;]" />
+  </Sequence>
+</Activity>

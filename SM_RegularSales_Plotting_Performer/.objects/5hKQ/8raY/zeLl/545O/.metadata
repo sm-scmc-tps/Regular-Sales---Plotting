@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Button Execute (Enter)",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "545OL4nthUqeVUYH_EZDZA",
+  "Reference": "OUyeWR2sw0Cb1MQhUwxXCg/545OL4nthUqeVUYH_EZDZA",
+  "ParentRef": "OUyeWR2sw0Cb1MQhUwxXCg/zeLlwBdomU2JyC6SpNVkTQ",
+  "Created": "2025-10-27T10:42:57.1733Z",
+  "Updated": "2025-10-27T10:42:57.1733Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

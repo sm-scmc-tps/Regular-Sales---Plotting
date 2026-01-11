@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Button Execute (F8)",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "UtkRrevQSEC729WOb0oKJA",
+  "Reference": "OUyeWR2sw0Cb1MQhUwxXCg/UtkRrevQSEC729WOb0oKJA",
+  "ParentRef": "OUyeWR2sw0Cb1MQhUwxXCg/HlmJV_fa8EOyp3Za0hGzEw",
+  "Created": "2025-10-27T11:56:05.6386595Z",
+  "Updated": "2025-10-27T11:56:05.6386595Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

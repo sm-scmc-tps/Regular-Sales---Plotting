@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Current value in column…",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "7oZkGeAn60q9-7R63Zx_EQ",
+  "Reference": "OUyeWR2sw0Cb1MQhUwxXCg/7oZkGeAn60q9-7R63Zx_EQ",
+  "ParentRef": "OUyeWR2sw0Cb1MQhUwxXCg/jDHQjMMjxUu0kN677FQdCw",
+  "Created": "2025-03-24T08:09:18.7564156Z",
+  "Updated": "2025-03-24T08:09:18.7564156Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

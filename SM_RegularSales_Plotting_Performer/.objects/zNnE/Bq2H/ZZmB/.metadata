@@ -1,0 +1,13 @@
+﻿{
+  "Name": "SMOA_SALES CHECKING - SEPTEMBER 2025.xlsb - E",
+  "Type": "Screen",
+  "Id": "ZZmBhD3N-kauPzdKiiuZmQ",
+  "Reference": "OUyeWR2sw0Cb1MQhUwxXCg/ZZmBhD3N-kauPzdKiiuZmQ",
+  "ParentRef": "OUyeWR2sw0Cb1MQhUwxXCg/Bq2HpqEDeUORLE2snP5kWg",
+  "Created": "2025-10-30T08:35:46.2848106Z",
+  "Updated": "2025-10-30T08:35:46.2848106Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

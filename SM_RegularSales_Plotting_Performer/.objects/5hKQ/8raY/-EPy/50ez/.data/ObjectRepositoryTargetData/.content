@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="FQDmG9n2gkiVVk44QpFM3A" Reference="OUyeWR2sw0Cb1MQhUwxXCg/50ezQ4p7jUSaxU-x5C3JEQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="54, 914, 154, 16" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap id='sbar/pane[0]' text='No contracts were found' /&gt;" Guid="6625f5ca-2963-467a-b677-9bfc49a947f0" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Collective Entry of Sales Reports' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="eefd909fca9892155ae37ab2646e4d82.png" xmlns="">0sUkpJaZ6Sk27SeIZj5Z0Aw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

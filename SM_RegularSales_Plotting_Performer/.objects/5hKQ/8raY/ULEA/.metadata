@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Info System Contracts",
+  "Type": "Screen",
+  "Id": "ULEAOChnsEq_riFxRN_VhQ",
+  "Reference": "OUyeWR2sw0Cb1MQhUwxXCg/ULEAOChnsEq_riFxRN_VhQ",
+  "ParentRef": "OUyeWR2sw0Cb1MQhUwxXCg/8raYqcWOwkyymhaiXzKW6g",
+  "Created": "2025-10-24T07:23:27.3378127Z",
+  "Updated": "2025-10-24T07:23:27.3378127Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

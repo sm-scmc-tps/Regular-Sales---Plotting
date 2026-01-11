@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Collective Entry of Sal…",
+  "Type": "Element",
+  "Id": "CfUhn8B8kE2yqTDmVDvXAA",
+  "Reference": "OUyeWR2sw0Cb1MQhUwxXCg/CfUhn8B8kE2yqTDmVDvXAA",
+  "ParentRef": "OUyeWR2sw0Cb1MQhUwxXCg/-EPyWC5LgUyw3mLtf9L5kA",
+  "Created": "2025-10-29T04:22:26.3846755Z",
+  "Updated": "2025-10-29T04:22:26.3846755Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

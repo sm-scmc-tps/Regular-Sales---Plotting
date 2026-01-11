@@ -1,0 +1,14 @@
+﻿{
+  "Name": "CTextField Consider Sal…",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "LCc2lBAAOEaSzh6vESG-wQ",
+  "Reference": "OUyeWR2sw0Cb1MQhUwxXCg/LCc2lBAAOEaSzh6vESG-wQ",
+  "ParentRef": "OUyeWR2sw0Cb1MQhUwxXCg/-EPyWC5LgUyw3mLtf9L5kA",
+  "Created": "2025-10-27T04:11:02.606427Z",
+  "Updated": "2025-10-27T04:11:02.606427Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

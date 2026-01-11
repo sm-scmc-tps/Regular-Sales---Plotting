@@ -1,0 +1,14 @@
+﻿{
+  "Name": "CTextField ABAP system …",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "YGlnwCD2SEqabQTDYGYnvw",
+  "Reference": "OUyeWR2sw0Cb1MQhUwxXCg/YGlnwCD2SEqabQTDYGYnvw",
+  "ParentRef": "OUyeWR2sw0Cb1MQhUwxXCg/ULEAOChnsEq_riFxRN_VhQ",
+  "Created": "2025-10-24T07:23:27.7176146Z",
+  "Updated": "2025-10-24T07:23:27.7176146Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
