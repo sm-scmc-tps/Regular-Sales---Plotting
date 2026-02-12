@@ -1,7 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Outlook_EmailSAPUnreachable" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umae="clr-namespace:UiPath.Mail.Activities.Enums;assembly=UiPath.Mail.Activities" xmlns:usa="clr-namespace:UiPathTeam.Subtitle.Activities;assembly=SubtitleActivity" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Outlook_EmailSAPUnreachable" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umae="clr-namespace:UiPath.Mail.Activities.Enums;assembly=UiPath.Mail.Activities" xmlns:usa="clr-namespace:UiPathTeam.Subtitle.Activities;assembly=SubtitleActivity" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_branchCode" Type="InArgument(x:String)" />
   </x:Members>
+  <this:Outlook_EmailSAPUnreachable.in_branchCode>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Outlook_EmailSAPUnreachable.in_branchCode>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -100,9 +104,10 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Outlook_EmailSAPUnreachable" sap:VirtualizedContainerService.HintSize="836,1105" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Outlook_EmailSAPUnreachable" sap:VirtualizedContainerService.HintSize="1036,1105" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="currentDate" />
     </Sequence.Variables>
@@ -124,10 +129,10 @@
           <OutArgument x:TypeArguments="x:String">[currentDate]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyyy-MM-dd")]</InArgument>
+          <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("MMM dd yyyy")]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:SendOutlookMail UseRichTextEditor="{x:Null}" Account="{x:Null}" AttachmentsCollection="{x:Null}" Bcc="{x:Null}" Body="[in_Config(&quot;RegularSales_Email_Unreachable_Body&quot;).ToString]" Cc="[in_Config(&quot;RegularSales_Email_Unreachable_CC&quot;).ToString]" ConnectionMode="IntegrationService" ContinueOnError="{x:Null}" DisplayName="Send Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="434,324" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="True" IsDraft="False" MailMessage="{x:Null}" ReplyTo="{x:Null}" Sensitivity="Confidential" SentOnBehalfOfName="{x:Null}" Subject="[in_Config(&quot;RegularSales_Email_Unreachable_Subject&quot;).ToString.Replace(&quot;yyyy-mm-dd&quot;,currentDate)]" TimeoutMS="{x:Null}" To="[in_Config(&quot;RegularSales_Email_Unreachable_To&quot;).ToString]" UseISConnection="True">
+      <ui:SendOutlookMail UseRichTextEditor="{x:Null}" Account="{x:Null}" AttachmentsCollection="{x:Null}" Bcc="{x:Null}" Body="[in_Config(&quot;RegularSales_Email_Unreachable_Body&quot;).ToString]" Cc="[in_Config(&quot;RegularSales_Email_Unreachable_CC&quot;).ToString]" ConnectionMode="IntegrationService" ContinueOnError="{x:Null}" DisplayName="Send Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="434,324" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="True" IsDraft="False" MailMessage="{x:Null}" ReplyTo="{x:Null}" Sensitivity="Confidential" SentOnBehalfOfName="{x:Null}" Subject="[in_Config(&quot;RegularSales_Email_Unreachable_Subject&quot;).ToString.Replace(&quot;[BRANCH]&quot;, in_branchCode) _&#xA;.Replace(&quot;MMM dd yyyy&quot;,currentDate)]" TimeoutMS="{x:Null}" To="[in_Config(&quot;RegularSales_Email_Unreachable_To&quot;).ToString]" UseISConnection="True">
         <ui:SendOutlookMail.ConnectionDetailsBackupSlot>
           <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="{x:Null}">
             <usau:BackupSlot.BackupValues>

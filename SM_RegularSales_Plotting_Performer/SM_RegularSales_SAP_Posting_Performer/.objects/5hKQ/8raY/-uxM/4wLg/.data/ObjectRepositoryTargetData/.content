@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="c5rfLpUC7EKteXX9_GSTDA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="eba0e628-068b-4ef7-b577-123df15310c2" DesignTimeRectangle="801, 834, 58, 26" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;wnd title='&amp;amp;Log On' aaname='Log On' cls='Button' /&gt;&lt;ctrl name='Log On' text='Log On' /&gt;" Guid="3112cc6b-5d51-46db-b5fe-4a23cb8dcf11" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#*' title='SAP Logon*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="007427be62fd212ffa2a1625eb288a3b.png" xmlns="">0hcTqBqubDkmLzSsHm_nQjQ</imageRef>
-    </TargetAnchorable>
-    <x:String x:Key="ActivityType">Click</x:String>
-  </ObjectRepositoryTargetData.Data>
-</ObjectRepositoryTargetData>

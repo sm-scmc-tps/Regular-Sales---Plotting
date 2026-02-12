@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="6v_cWTkNfk-OD-xZCfp0qg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="d76e9411-6955-4b10-a394-c2dc3ebfe709" DesignTimeRectangle="273, 573, 1161, 24" DesignTimeScaleFactor="1" ElementType="ListItem" FullSelectorArgument="&lt;ctrl name='T4S System' /&gt;" Guid="28897db8-ec17-454b-ae6c-f0310f3640c2" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#*' title='SAP Logon*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="4292a70f506adcfb4b6b19160d0a3aa7.png" xmlns="">049dQIOzmjkCeUSiOD8Hfrw</imageRef>
-    </TargetAnchorable>
-    <x:String x:Key="ActivityType">None</x:String>
-  </ObjectRepositoryTargetData.Data>
-</ObjectRepositoryTargetData>

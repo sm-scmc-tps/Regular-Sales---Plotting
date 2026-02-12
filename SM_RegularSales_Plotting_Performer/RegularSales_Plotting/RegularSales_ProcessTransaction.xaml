@@ -175,7 +175,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Flowchart sap2010:Annotation.AnnotationText="Process Transaction:&#xA;Involves the following process in order to fulfill the SM Ticket OTC SAP Entries functionality&#xA;1. Prepare Data - Parse the date format, separate MM, DD, YYYY, From &amp; To for the use on the entire processing variable&#xA;2. Queue Counter - Included counter for the timing of first email blasting (Successful and Failed: for rerun)&#xA;3. Call Transaction - Calling transaction code (TCODE)&#xA;4. Select Variant - Process of searching the assigned variant of TCODE and the posting date for generation&#xA;5. Download Variant - Process of downloading variant to LOCAL folder&#xA;6. Upload Variant - Process of uploading variant from LOCAL folder to SharePoint designated folder&#xA;7. Deletion of Local files - Process of deletion of files downloaded from LOCAL folder" DisplayName="RegularSales_SAP_Posting_ProcessTransaction" sap:VirtualizedContainerService.HintSize="912,688.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Process Transaction:&#xA;Involves the following process in order to fulfill the SM Ticket OTC SAP Entries functionality&#xA;1. Prepare Data - Parse the date format, separate MM, DD, YYYY, From &amp; To for the use on the entire processing variable&#xA;2. Queue Counter - Included counter for the timing of first email blasting (Successful and Failed: for rerun)&#xA;3. Call Transaction - Calling transaction code (TCODE)&#xA;4. Select Variant - Process of searching the assigned variant of TCODE and the posting date for generation&#xA;5. Download Variant - Process of downloading variant to LOCAL folder&#xA;6. Upload Variant - Process of uploading variant from LOCAL folder to SharePoint designated folder&#xA;7. Deletion of Local files - Process of deletion of files downloaded from LOCAL folder" DisplayName="RegularSales_SAP_Posting_ProcessTransaction" sap:VirtualizedContainerService.HintSize="907,688.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Name="Retry" />
       <Variable x:TypeArguments="x:Boolean" Name="isLogin" />
@@ -224,12 +224,12 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Size x:Key="ShapeSize">50,50</av:Size>
         <av:Point x:Key="ShapeLocation">445,5</av:Point>
-        <av:PointCollection x:Key="ConnectorLocation">470,55 470,105</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">495,30 710,30 710,65</av:PointCollection>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID36</x:Reference>
+      <x:Reference>__ReferenceID38</x:Reference>
     </Flowchart.StartNode>
     <FlowStep x:Name="__ReferenceID36" sap2010:WorkflowViewState.IdRef="FlowStep_1">
       <sap:WorkflowViewStateService.ViewState>
@@ -568,7 +568,7 @@
                                                                       <av:PointCollection x:Key="ConnectorLocation">750,1525 750,1555 470,1555 470,1570</av:PointCollection>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Move Working File to Complete Folder in Sharepoint" sap:VirtualizedContainerService.HintSize="335,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_151" UnSafe="False" WorkflowFileName="Sharepoint\Sharepoint_MoveSharePointFile.xaml">
+                                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Move Working File to Complete Folder in Sharepoint" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_151" UnSafe="False" WorkflowFileName="Sharepoint\Sharepoint_MoveSharePointFile.xaml">
                                                                     <ui:InvokeWorkflowFile.Arguments>
                                                                       <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="in_DestinationFolderOUTFolders">[DestinationFolderDailyChecking]</InArgument>
                                                                       <InArgument x:TypeArguments="umfm:O365DriveRemoteItem" x:Key="in_DestinationFolderOUT7Folders">[DestinationFolderPosted]</InArgument>
@@ -1548,7 +1548,7 @@
                                                                                                           <av:PointCollection x:Key="ConnectorLocation">525,2030 565,2030</av:PointCollection>
                                                                                                         </scg:Dictionary>
                                                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                                                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each sheetName" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[sheetNames]">
+                                                                                                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each sheetName" sap:VirtualizedContainerService.HintSize="598,2614" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[sheetNames]">
                                                                                                         <ui:ForEach.Body>
                                                                                                           <ActivityAction x:TypeArguments="x:String">
                                                                                                             <ActivityAction.Argument>
@@ -1593,7 +1593,7 @@
                                                                                                                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                                                                                                       </scg:Dictionary>
                                                                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Daily_Sales_Checking_PlottingFiles1_Updated - Invoke Workflow File (RegularSales_Plotting\Daily_Sales_Checking_PlottingFiles1_Updated.xaml)" sap:VirtualizedContainerService.HintSize="526,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_150" UnSafe="False" WorkflowFileName="RegularSales_Plotting\Daily_Sales_Checking_PlottingFiles1_Updated.xaml">
+                                                                                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Daily_Sales_Checking_PlottingFiles1_Updated - Invoke Workflow File (RegularSales_Plotting\Daily_Sales_Checking_PlottingFiles1_Updated.xaml)" sap:VirtualizedContainerService.HintSize="526,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_155" UnSafe="False" WorkflowFileName="RegularSales_Plotting\Daily_Sales_Checking_PlottingFiles1_Updated.xaml">
                                                                                                                       <ui:InvokeWorkflowFile.Arguments>
                                                                                                                         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                                                                                                                         <InArgument x:TypeArguments="x:String" x:Key="in_branchCode">[in_branchCode]</InArgument>
@@ -1828,7 +1828,7 @@
                                                                                                                                               </scg:Dictionary>
                                                                                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                                                                                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="LogMessage_45" Message="[&quot;Processing RENTAL RATES&quot;]" />
-                                                                                                                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RegularSales_ProcessTransaction - RENTALRATES - Invoke Workflow File (RegularSales_Plotting\RegularSales_ProcessTransaction - RENTALRATES.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_139" UnSafe="False" WorkflowFileName="RegularSales_Plotting\RegularSales_ProcessTransaction - RENTALRATES.xaml">
+                                                                                                                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RegularSales_ProcessTransaction - RENTALRATES - Invoke Workflow File (RegularSales_Plotting\RegularSales_ProcessTransaction - RENTALRATES.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_156" UnSafe="False" WorkflowFileName="RegularSales_Plotting\RegularSales_ProcessTransaction - RENTALRATES.xaml">
                                                                                                                                               <ui:InvokeWorkflowFile.Arguments>
                                                                                                                                                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                                                                                                                                                 <InArgument x:TypeArguments="s:DateTime" x:Key="in_QueueTransactionDate">[in_QueueTransactionDate]</InArgument>
@@ -1949,7 +1949,7 @@
                                                                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                                                               </ui:InvokeWorkflowFile>
                                                                                                               <FlowStep.Next>
-                                                                                                                <FlowStep x:Name="__ReferenceID33">
+                                                                                                                <FlowStep x:Name="__ReferenceID33" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                                                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                       <av:Point x:Key="ShapeLocation">245,2095</av:Point>
@@ -2011,7 +2011,7 @@
                                                                                                                             </sap:WorkflowViewStateService.ViewState>
                                                                                                                           </ui:InvokeWorkflowFile>
                                                                                                                           <FlowStep.Next>
-                                                                                                                            <FlowStep x:Name="__ReferenceID34">
+                                                                                                                            <FlowStep x:Name="__ReferenceID34" sap2010:WorkflowViewState.IdRef="FlowStep_2">
                                                                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                                   <av:Point x:Key="ShapeLocation">605,2345</av:Point>
@@ -2052,7 +2052,7 @@
                                                                                                                                     </sap:WorkflowViewStateService.ViewState>
                                                                                                                                   </ui:InvokeWorkflowFile>
                                                                                                                                   <FlowStep.Next>
-                                                                                                                                    <FlowStep x:Name="__ReferenceID35">
+                                                                                                                                    <FlowStep x:Name="__ReferenceID35" sap2010:WorkflowViewState.IdRef="FlowStep_3">
                                                                                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                                           <av:Point x:Key="ShapeLocation">235,2465</av:Point>
@@ -2116,7 +2116,7 @@
                                                                                                                                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Outlook_SendEmail - Invoke Workflow File (Outlook\Outlook_SendEmail.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_145" UnSafe="False" WorkflowFileName="Outlook\Outlook_SendEmail.xaml">
                                                                                                                                                     <ui:InvokeWorkflowFile.Arguments>
                                                                                                                                                       <InArgument x:TypeArguments="x:String" x:Key="in_TransactionDate">[Nothing]</InArgument>
-                                                                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailTO">[in_Email_AR]</InArgument>
+                                                                                                                                                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailTO">[in_Email_DailyChecking]</InArgument>
                                                                                                                                                       <InArgument x:TypeArguments="x:String" x:Key="in_EmailSubject" xml:space="preserve">[in_Config("RegularSales_Plotting_Email_DailyChecking_Subject").ToString.Replace("[BRANCH]", in_branchCode) _
 .Replace("[YEAR]", in_QueueTransactionDate.ToString("yyyy")) _
 .Replace("[MONTH]",in_QueueTransactionDate.ToString("MMM")) _
@@ -2143,7 +2143,7 @@
                                                                                                                                                           <av:Size x:Key="ShapeSize">110,70</av:Size>
                                                                                                                                                         </scg:Dictionary>
                                                                                                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                                                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName=" Delete Files Process" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_147" UnSafe="False" WorkflowFileName="Common\RegularSales_LocalDeleteFilesProcess.xaml">
+                                                                                                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName=" Delete Files Process" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_147" UnSafe="False" WorkflowFileName="Common\RegularSales_LocalDeleteFilesProcess.xaml">
                                                                                                                                                         <ui:InvokeWorkflowFile.Arguments>
                                                                                                                                                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                                                                                                                                                           <InArgument x:TypeArguments="x:String" x:Key="in_RegularSales_LocalFilePathsForDeletion">[in_Config("RegularSales_LocalFilePathsForDeletion").ToString]</InArgument>
@@ -2266,5 +2266,58 @@
     <x:Reference>__ReferenceID33</x:Reference>
     <x:Reference>__ReferenceID34</x:Reference>
     <x:Reference>__ReferenceID35</x:Reference>
+    <FlowStep x:Name="__ReferenceID38">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">655,65</av:Point>
+          <av:Size x:Key="ShapeSize">110,70</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">710,135 710,155</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_RetryConnection" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_153" UnSafe="False" WorkflowFileName="SAP\SAP_RetryConnection.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="in_SAPConnectionRetry">[CInt(in_Config("RegularSales_SAPConnectionRetry"))]</InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="in_CheckAppStateGenSec">[CInt(in_Config("RegularSales_CheckAppStateGenSec"))]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_SAPConnectionName">[in_Config("RegularSales_SAP_ConnectionName").ToString.Trim]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_SAP_LogonPath">[in_Config("RegularSales_SAP_LogonPath").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Credential">[in_Config("RegularSales_SAP_Credential").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="in_Retries">[CInt(in_Config("RegularSales_SAP_Retries").ToString)]</InArgument>
+          <InArgument x:TypeArguments="x:Double" x:Key="in_RetryInterval">[CDbl(in_Config("RegularSales_SAP_RetryInterval").ToString)]</InArgument>
+          <InArgument x:TypeArguments="x:Double" x:Key="in_Timeout">[CDbl(in_Config("RegularSales_SAP_Timeout").ToString)]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_BranchCode">[in_BranchCode]</InArgument>
+          <InArgument x:TypeArguments="s:DateTime" x:Key="in_QueueTransactionDate">[in_QueueTransactionDate]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID37">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">655,155</av:Point>
+              <av:Size x:Key="ShapeSize">110,70</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">655,190 625,190 625,140 525,140</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_Login" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_154" UnSafe="False" WorkflowFileName="SAP\SAP_Login.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SAP_LogonPath">[in_Config("RegularSales_SAP_LogonPath").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SAP_ConnectionName">[in_Config("RegularSales_SAP_ConnectionName").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Client">[in_Config("RegularSales_SAP_Client").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Credential">[in_Config("RegularSales_SAP_Credential").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Language">[in_Config("RegularSales_SAP_Language").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:Double" x:Key="in_Timeout">[CDbl(in_Config("RegularSales_SAP_Timeout").ToString)]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_Retries">[CInt(in_Config("RegularSales_SAP_Retries").ToString)]</InArgument>
+              <InArgument x:TypeArguments="x:Double" x:Key="in_RetryInterval">[CDbl(in_Config("RegularSales_SAP_RetryInterval").ToString)]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID36</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID37</x:Reference>
   </Flowchart>
 </Activity>

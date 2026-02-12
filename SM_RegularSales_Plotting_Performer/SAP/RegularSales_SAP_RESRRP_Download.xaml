@@ -11,12 +11,6 @@
   <this:RegularSales_SAP_RESRRP_Download.in_FileName>
     <InArgument x:TypeArguments="x:String" />
   </this:RegularSales_SAP_RESRRP_Download.in_FileName>
-  <this:RegularSales_SAP_RESRRP_Download.in_reportFromDate>
-    <InArgument x:TypeArguments="x:String" />
-  </this:RegularSales_SAP_RESRRP_Download.in_reportFromDate>
-  <this:RegularSales_SAP_RESRRP_Download.in_reportToDate>
-    <InArgument x:TypeArguments="x:String" />
-  </this:RegularSales_SAP_RESRRP_Download.in_reportToDate>
   <this:RegularSales_SAP_RESRRP_Download.in_MonthEnd>
     <InArgument x:TypeArguments="s:DateTime" />
   </this:RegularSales_SAP_RESRRP_Download.in_MonthEnd>
@@ -64,6 +58,8 @@
       <x:String>System.Linq.Expressions</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -123,28 +119,29 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
       <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="RegularSales_SAP_RESRRP_Download" sap:VirtualizedContainerService.HintSize="836,2795" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="RegularSales_SAP_RESRRP_Download" sap:VirtualizedContainerService.HintSize="890,3347" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="554,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;RESRRP SAP Downloading Started...&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Collective Entry of Sales Reports(1)(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="554,2435" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e57cf0b7-6bdc-4fd0-8819-f927f0d56e6c" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Collective Entry of Sales Reports(1)(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="554,2987" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e57cf0b7-6bdc-4fd0-8819-f927f0d56e6c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,2112" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,2664" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'GridView  SAPGUI.GridVi...'" sap:VirtualizedContainerService.HintSize="486,192" sap2010:WorkflowViewState.IdRef="SelectMenuItem_1" Item="Choose Layout...">
+            <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'GridView  SAPGUI.GridVi...'" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="SelectMenuItem_1" Item="Choose Layout...">
               <ucas:SelectMenuItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="32">
                   <x:String>Delete Selected Report</x:String>
@@ -189,8 +186,14 @@
                   </ui:Target.WaitForReady>
                 </ui:Target>
               </ucas:SelectMenuItem.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ucas:SelectMenuItem>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'FSS2'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,225" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e57cf0b7-6bdc-4fd0-8819-f927f0d56e6c" Version="V4">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'FSS2'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e57cf0b7-6bdc-4fd0-8819-f927f0d56e6c" Version="V4">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="22, 201, 117, 26" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap colName='VARIANT' id='usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell' tableRow='1' /&gt;" Guid="5e907bf3-9898-408d-b8a4-60ea9e0e5d47" InformativeScreenshot="380a8e4cf18d773a018e0e10ce10be94.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Choose Layout' idx='*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -204,6 +207,12 @@
                   </uix:VerifyExecutionOptions.Timeout>
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Report from'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e57cf0b7-6bdc-4fd0-8819-f927f0d56e6c" Version="V4">
               <uix:NClick.Target>
@@ -278,15 +287,45 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ucas:SelectMenuItem>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Report from'" sap:VirtualizedContainerService.HintSize="486,187" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_reportFromDate]">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,448" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,337" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into '01.12.2024'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,277" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="e57cf0b7-6bdc-4fd0-8819-f927f0d56e6c" Text="[in_reportFromDate]" Version="V4">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable ContentHash="5VcqOk5fAkadOAYtp3TrRA" DesignTimeRectangle="361, 109, 109, 25" ElementType="Toolbar" FullSelectorArgument="&lt;sap id='usr/ssub%_SUBSCREEN_FREESEL:SAPLSSEL:1105/ctxt%%DYN001-LOW' /&gt;" Guid="1fdb5724-6ad5-41fa-90be-e832fefaf0ff" InformativeScreenshot="b7a27a9bca7b50072faa1bafc57efbaa.png" Reference="OUyeWR2sw0Cb1MQhUwxXCg/2Sj94UrqJU6F9e_C5EqowQ" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Determine Values for Filter Criteria' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Date from: &quot; + in_reportFromDate]" />
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="2" DisplayName="Type Into 'CTextField  Report from'" sap:VirtualizedContainerService.HintSize="486,187" sap2010:WorkflowViewState.IdRef="TypeInto_4" SimulateType="True" Text="[in_reportFromDate]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="586ee6f4-0e78-4c3a-8be2-57b966702b31" InformativeScreenshot="2462f3761380557001249b52d0baf3de" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Determine Values for Filter Criteria' idx='*' /&gt;&lt;sap id='usr/ssub%_SUBSCREEN_FREESEL:SAPLSSEL:1105/ctxt%%DYN001-LOW' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="586ee6f4-0e78-4c3a-8be2-57b966702b31" InformativeScreenshot="a2a54a114c19dda7c273300f3e8a8529" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Determine Values for Filter Criteria' idx='*' /&gt;&lt;sap id='usr/ssub%_SUBSCREEN_FREESEL:SAPLSSEL:1105/ctxt%%DYN001-LOW' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
                 </ui:Target>
               </ui:TypeInto.Target>
               <sap:WorkflowViewStateService.ViewState>
@@ -296,9 +335,48 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Report from'" sap:VirtualizedContainerService.HintSize="486,187" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[in_reportToDate]">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into '31.12.2025'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="e57cf0b7-6bdc-4fd0-8819-f927f0d56e6c" Text="[in_reportToDate]" Version="V4">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable ContentHash="TESNq2aBAE-5LsoBN7bG_Q" DesignTimeRectangle="611, 109, 109, 25" ElementType="Toolbar" FullSelectorArgument="&lt;sap id='usr/ssub%_SUBSCREEN_FREESEL:SAPLSSEL:1105/ctxt%%DYN001-HIGH' /&gt;" Guid="5c0b7827-065b-423e-a5f4-fc9548c6f35a" InformativeScreenshot="aa2fff8c1548fe7de31a5f55ebf5cb6d.png" Reference="OUyeWR2sw0Cb1MQhUwxXCg/zLsJQ6xnC0K-SDqcH9VWzw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Determine Values for Filter Criteria' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Date to: &quot; + in_reportToDate]" />
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="2" DisplayName="Type Into 'CTextField  Report from'" sap:VirtualizedContainerService.HintSize="486,187" sap2010:WorkflowViewState.IdRef="TypeInto_5" SimulateType="True" Text="[in_reportToDate]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7ee0dbd0-b63a-49e0-b731-0c68adafdc45" InformativeScreenshot="b6e7330a4775a06a78e17bdf6f520b11" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Determine Values for Filter Criteria' idx='*' /&gt;&lt;sap id='usr/ssub%_SUBSCREEN_FREESEL:SAPLSSEL:1105/ctxt%%DYN001-HIGH' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7ee0dbd0-b63a-49e0-b731-0c68adafdc45" InformativeScreenshot="817b44d7930907df4e79f121cce87880" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Determine Values for Filter Criteria' idx='*' /&gt;&lt;sap id='usr/ssub%_SUBSCREEN_FREESEL:SAPLSSEL:1105/ctxt%%DYN001-HIGH' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -407,7 +485,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_SaveFile_RESRRP - Invoke Workflow File (SAP\SAP_SaveFile_RESRRP.xaml)" sap:VirtualizedContainerService.HintSize="486,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SAP\SAP_SaveFile_RESRRP.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_SaveFile_RESRRP - Invoke Workflow File (SAP\SAP_SaveFile_RESRRP.xaml)" sap:VirtualizedContainerService.HintSize="486,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SAP\SAP_SaveFile_RESRRP.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_Delay">[TimeSpan.FromSeconds(CInt(in_Config("RegularSales_Macro_Delay")))]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_DirectoryPath">[in_Config("RegularSales_SAP_OutputDirectory").ToString]</InArgument>

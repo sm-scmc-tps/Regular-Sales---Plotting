@@ -148,15 +148,15 @@
       <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Azure</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="979,2723" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="890,2483" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="DestinationFolder" />
       <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="DestinationFolderForPosting" />
       <Variable x:TypeArguments="umfm:O365DriveRemoteItem" Name="DestinationFolderPosted" />
       <Variable x:TypeArguments="umfm:O365DriveRemoteItem[]" Name="fileList" />
-      <Variable x:TypeArguments="s:DateTime" Name="in_QueueTransactionDate" />
       <Variable x:TypeArguments="x:Int32" Name="FileListCount" />
       <Variable x:TypeArguments="mg:DriveItem" Name="FileDriveItem" />
     </Sequence.Variables>
@@ -199,33 +199,69 @@
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_RetryConnection" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_46" UnSafe="False" WorkflowFileName="SAP\SAP_RetryConnection.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_SAPConnectionRetry">[CInt(in_Config("RegularSales_SAPConnectionRetry"))]</InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_CheckAppStateGenSec">[CInt(in_Config("RegularSales_CheckAppStateGenSec"))]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SAPConnectionName">[in_Config("RegularSales_SAP_ConnectionName").ToString.Trim]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_LogonPath">[in_Config("RegularSales_SAP_LogonPath").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Credential">[in_Config("RegularSales_SAP_Credential").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_Retries">[CInt(in_Config("RegularSales_SAP_Retries").ToString)]</InArgument>
-        <InArgument x:TypeArguments="x:Double" x:Key="in_RetryInterval">[CDbl(in_Config("RegularSales_SAP_RetryInterval").ToString)]</InArgument>
-        <InArgument x:TypeArguments="x:Double" x:Key="in_Timeout">[CDbl(in_Config("RegularSales_SAP_Timeout").ToString)]</InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_Login" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_45" UnSafe="False" WorkflowFileName="SAP\SAP_Login.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_LogonPath">[in_Config("RegularSales_SAP_LogonPath").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_ConnectionName">[in_Config("RegularSales_SAP_ConnectionName").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Client">[in_Config("RegularSales_SAP_Client").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Credential">[in_Config("RegularSales_SAP_Credential").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Language">[in_Config("RegularSales_SAP_Language").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:Double" x:Key="in_Timeout">[CDbl(in_Config("RegularSales_SAP_Timeout").ToString)]</InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_Retries">[CInt(in_Config("RegularSales_SAP_Retries").ToString)]</InArgument>
-        <InArgument x:TypeArguments="x:Double" x:Key="in_RetryInterval">[CDbl(in_Config("RegularSales_SAP_RetryInterval").ToString)]</InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_RetryConnection" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_46" UnSafe="False" WorkflowFileName="SAP\SAP_RetryConnection.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_SAPConnectionRetry">[CInt(in_Config("RegularSales_SAPConnectionRetry"))]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_CheckAppStateGenSec">[CInt(in_Config("RegularSales_CheckAppStateGenSec"))]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SAPConnectionName">[in_Config("RegularSales_SAP_ConnectionName").ToString.Trim]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SAP_LogonPath">[in_Config("RegularSales_SAP_LogonPath").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Credential">[in_Config("RegularSales_SAP_Credential").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_Retries">[CInt(in_Config("RegularSales_SAP_Retries").ToString)]</InArgument>
+              <InArgument x:TypeArguments="x:Double" x:Key="in_RetryInterval">[CDbl(in_Config("RegularSales_SAP_RetryInterval").ToString)]</InArgument>
+              <InArgument x:TypeArguments="x:Double" x:Key="in_Timeout">[CDbl(in_Config("RegularSales_SAP_Timeout").ToString)]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_BranchCode">[in_TransactionItem.SpecificContent("Branch Code").ToString]</InArgument>
+              <InArgument x:TypeArguments="s:DateTime" x:Key="in_QueueTransactionDate">[CType(in_TransactionItem.SpecificContent("Current Timestamp"), DateTime)]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_Login" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_45" UnSafe="False" WorkflowFileName="SAP\SAP_Login.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SAP_LogonPath">[in_Config("RegularSales_SAP_LogonPath").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SAP_ConnectionName">[in_Config("RegularSales_SAP_ConnectionName").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Client">[in_Config("RegularSales_SAP_Client").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_OrchestratorFolder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Credential">[in_Config("RegularSales_SAP_Credential").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Language">[in_Config("RegularSales_SAP_Language").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:Double" x:Key="in_Timeout">[CDbl(in_Config("RegularSales_SAP_Timeout").ToString)]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_Retries">[CInt(in_Config("RegularSales_SAP_Retries").ToString)]</InArgument>
+              <InArgument x:TypeArguments="x:Double" x:Key="in_RetryInterval">[CDbl(in_Config("RegularSales_SAP_RetryInterval").ToString)]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Downloading FOR_BOT_OPS_URL file started.&quot;]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Sharepoint_DownloadFile - Invoke Workflow File (Sharepoint\Sharepoint_DownloadFile.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="Sharepoint\Sharepoint_DownloadFile.xaml">
       <ui:InvokeWorkflowFile.Arguments>

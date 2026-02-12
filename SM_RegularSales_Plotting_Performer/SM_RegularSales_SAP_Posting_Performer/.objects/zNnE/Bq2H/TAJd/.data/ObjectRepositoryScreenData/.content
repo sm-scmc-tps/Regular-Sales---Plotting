@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryScreenData ContentHash="RFyLcGv8m02jG1ZGP4qR8g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <ObjectRepositoryScreenData.Data>
-    <TargetApp x:Key="TargetApp" Area="0, 0, 1250, 480" FilePath="C:\Program Files\Microsoft Office\root\Office16\excel.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE+SURBVDhPY4ABxTJ3TsVSd2OFYrc0hSLXyQqFLgfk853fyuc5/5fPdfoPVYYJlCo81ymWe9wGGvAfaMB/oAH/gQb8BxrwH2jAf5gBYDFU/BOIJ4AM+A804D8hA9DBrz+/wYYQbQBIDATAckhsuAGVayb8P33/yn/VMq//GuU+/2+9ePB/+6XDOF0AAigGxM6uBAvmLWn/X71m4v8/f//+d+tIId4FIC9cfnLr/4m7l/4/eP30/9ozu/CGAQhgGJC+sBEsAQog+9Y40sIAZgDI6SDs2pFMmgtUgPTdV4//b7qw///T9y8hAUiKC8pX94EFvXoz/7dtmgVm+/VmE++C2QfX/F97djc4HehWBfx/9ent/0M3zpAWBjRPiWgYnheIykzQvIcbAA0AZWczoAGg7DwNaMBhoAEf8BvAwAAADxctk/R7e+MAAAAASUVORK5CYII=" Selector="&lt;wnd app='excel.exe' cls='#32770' title='Select the Source File' /&gt;" Title="Select the Source File" Version="V1">
-      <imageRef attrName="InformativeScreenshot" originalValue="2126305c908d9fa44f963e29ea2b78af.png" xmlns="">0suHq1yN7PUKPZofHUsQAKQ</imageRef>
-    </TargetApp>
-  </ObjectRepositoryScreenData.Data>
-</ObjectRepositoryScreenData>

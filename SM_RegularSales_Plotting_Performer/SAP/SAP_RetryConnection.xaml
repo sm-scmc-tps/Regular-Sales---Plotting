@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SAP_RetryConnection" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:usa="clr-namespace:UiPathTeam.Subtitle.Activities;assembly=SubtitleActivity" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_RetryConnection" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:usa="clr-namespace:UiPathTeam.Subtitle.Activities;assembly=SubtitleActivity" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_SAPConnectionRetry" Type="InArgument(x:Int32)" />
@@ -10,7 +10,15 @@
     <x:Property Name="in_Retries" Type="InArgument(x:Int32)" />
     <x:Property Name="in_RetryInterval" Type="InArgument(x:Double)" />
     <x:Property Name="in_Timeout" Type="InArgument(x:Double)" />
+    <x:Property Name="in_BranchCode" Type="InArgument(x:String)" />
+    <x:Property Name="in_QueueTransactionDate" Type="InArgument(s:DateTime)" />
   </x:Members>
+  <this:SAP_RetryConnection.in_BranchCode>
+    <InArgument x:TypeArguments="x:String" />
+  </this:SAP_RetryConnection.in_BranchCode>
+  <this:SAP_RetryConnection.in_QueueTransactionDate>
+    <InArgument x:TypeArguments="s:DateTime" />
+  </this:SAP_RetryConnection.in_QueueTransactionDate>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -128,7 +136,7 @@
       <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_RetryConnection" sap:VirtualizedContainerService.HintSize="1720,8949" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_RetryConnection" sap:VirtualizedContainerService.HintSize="1720,9006" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="retryCount" />
       <Variable x:TypeArguments="x:Int32" Default="3" Name="maxRetries" />
@@ -142,7 +150,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="1720,8926" sap2010:WorkflowViewState.IdRef="Sequence_40">
+    <Sequence sap:VirtualizedContainerService.HintSize="1720,8983" sap2010:WorkflowViewState.IdRef="Sequence_40">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -745,7 +753,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InterruptibleWhile>
-      <If Condition="[sapConnected = False]" sap:VirtualizedContainerService.HintSize="1686,1490" sap2010:WorkflowViewState.IdRef="If_1">
+      <If Condition="[sapConnected = False]" sap:VirtualizedContainerService.HintSize="1686,1547" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -753,17 +761,48 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,1261" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,1318" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Outlook_EmailSAPUnreachable - Invoke Workflow File (Outlook\Outlook_EmailSAPUnreachable.xaml)" sap:VirtualizedContainerService.HintSize="382,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Outlook\Outlook_EmailSAPUnreachable.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Outlook_EmailSAPUnreachable - Invoke Workflow File (Outlook\Outlook_EmailSAPUnreachable.xaml)" sap:VirtualizedContainerService.HintSize="382,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Outlook\Outlook_EmailSAPUnreachable.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_branchCode">[in_BranchCode]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="CommentOut_44">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Outlook_SendEmail - Invoke Workflow File (Outlook\Outlook_SendEmail.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Outlook\Outlook_SendEmail.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_TransactionDate">[Nothing]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailTO">[in_Email_AR]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailSubject">[in_Config("RegularSales_Email_Unreachable_To").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailBody">[in_Config("RegularSales_Email_Unreachable_Subject").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailCC">[Nothing]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailBCC">[in_Config("RegularSales_Email_BCC").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailOnBehalf">[in_Config("RegularSales_Outlook_Email_EmailOnBehalf").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Account">[in_Config("RegularSales_Outlook_Email_Account").ToString]</InArgument>
+                      <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_Attachments">[Nothing]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
             <ui:LogMessage DisplayName="&quot;Killing Process: SAP Application....&quot;" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="Info" Message="[&quot;Killing SAP Application....&quot;]" />
             <usa:DisplaySubtitleActivity ContinueOnError="{x:Null}" BackgroundColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#000000&quot;)]" BackgroundOpacity="0.8" DisplayName="&quot;Killing Process: SAP Application....&quot;" DurationMS="3000" FontSize="30" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="DisplaySubtitleActivity_21" Message="Killing SAP Application..." TextColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#00b7eb&quot;)]" />
             <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="382,167" sap2010:WorkflowViewState.IdRef="KillProcess_6" ProcessName="saplogon" />

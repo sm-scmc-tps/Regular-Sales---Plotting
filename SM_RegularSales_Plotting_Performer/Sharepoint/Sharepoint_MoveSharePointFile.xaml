@@ -122,7 +122,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sharepoint_MoveSharePointFile" sap:VirtualizedContainerService.HintSize="912,688.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sharepoint_MoveSharePointFile" sap:VirtualizedContainerService.HintSize="907,688.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="umfm:O365DriveRemoteItem[]" Name="fileList" />
     </Sequence.Variables>
@@ -384,7 +384,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </umaf:GetFileListConnections>
-              <ui:ForEach x:TypeArguments="umfm:O365DriveRemoteItem" CurrentIndex="{x:Null}" DisplayName="For Each File in list" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[fileList]">
+              <ui:ForEach x:TypeArguments="umfm:O365DriveRemoteItem" CurrentIndex="{x:Null}" DisplayName="For Each File in list" sap:VirtualizedContainerService.HintSize="418,537" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[fileList]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="umfm:O365DriveRemoteItem">
                     <ActivityAction.Argument>

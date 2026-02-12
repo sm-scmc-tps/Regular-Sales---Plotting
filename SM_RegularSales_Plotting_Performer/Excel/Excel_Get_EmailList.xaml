@@ -124,7 +124,7 @@
       <AssemblyReference>SubtitleActivity</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Excel_Get_EmailList" sap:VirtualizedContainerService.HintSize="1067,2137" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Excel_Get_EmailList" sap:VirtualizedContainerService.HintSize="950,2137" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="AllowedPositions" />
       <Variable x:TypeArguments="scg:IEnumerable(sd:DataRow)" Name="FilteredRows" />

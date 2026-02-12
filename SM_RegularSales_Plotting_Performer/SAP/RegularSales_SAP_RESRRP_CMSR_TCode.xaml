@@ -146,6 +146,7 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="RegularSales_SAP_RESRRP_TCode" sap:VirtualizedContainerService.HintSize="1058,3629" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -489,8 +490,8 @@
                       <InArgument x:TypeArguments="x:String" x:Key="in_BranchCode">[in_BranchCode]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="out_QueueTransactionDateParse">[QueueTransactionDateParse]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_FileName">[in_FileName]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_reportFromDate">[reportFromDate]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_reportToDate">[reportToDate]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_reportFromDate">[in_reportFromDate]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_reportToDate">[in_reportToDate]</InArgument>
                       <InArgument x:TypeArguments="s:DateTime" x:Key="in_MonthEnd">[in_MonthEnd]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>

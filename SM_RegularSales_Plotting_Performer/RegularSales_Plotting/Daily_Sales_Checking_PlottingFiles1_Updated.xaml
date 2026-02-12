@@ -152,7 +152,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sales_Checking_PlottingFiles" sap:VirtualizedContainerService.HintSize="979,3451" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sales_Checking_PlottingFiles" sap:VirtualizedContainerService.HintSize="890,3451" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>

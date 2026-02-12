@@ -138,7 +138,7 @@
       <AssemblyReference>UiPath.Azure</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="836,2936" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1067,2936" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="companyCode" />
       <Variable x:TypeArguments="s:DateTime" Name="QueueTransactionDate" />
@@ -271,7 +271,7 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeWorkflowFile>
           <usa:DisplaySubtitleActivity ContinueOnError="{x:Null}" BackgroundColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#000000&quot;)]" BackgroundOpacity="0.8" DisplayName="Display Subtitle" DurationMS="3000" FontSize="30" sap:VirtualizedContainerService.HintSize="479,112" sap2010:WorkflowViewState.IdRef="DisplaySubtitleActivity_1" Message="[&quot;Processing: &quot; + RetryProcessingCount.ToString + &quot; | &quot; +  companyCode + Environment.NewLine + &#xA;&quot;Date: &quot; + QueueTransactionDate.ToString(&quot;MMM-d-yyyy&quot;)]" TextColor="[System.Drawing.ColorTranslator.FromHtml(&quot;#00b7eb&quot;)]" />
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Process XAML (try) &quot; + Environment.NewLine +&#xD;&#xA;&quot;Queue Transaction Date: &quot; + QueueTransactionDate.ToString(&quot;MM/dd/yyyy&quot;) + Environment.NewLine +&#xD;&#xA;&quot;Branch Code: &quot; + out_branchCode.ToString + Environment.NewLine +&#xD;&#xA;&quot;Company Code: &quot; + companyCode.ToString + Environment.NewLine]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Process XAML (try) &quot; + Environment.NewLine +&#xA;&quot;Queue Transaction Date: &quot; + QueueTransactionDate.ToString(&quot;MM/dd/yyyy&quot;) + Environment.NewLine +&#xA;&quot;Branch Code: &quot; + out_branchCode.ToString + Environment.NewLine +&#xA;&quot;Company Code: &quot; + companyCode.ToString + Environment.NewLine]" />
           <Assign sap:VirtualizedContainerService.HintSize="479,114" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[io_queueItemCounter]</OutArgument>
